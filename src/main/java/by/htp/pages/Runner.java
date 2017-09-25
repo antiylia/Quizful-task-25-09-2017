@@ -35,6 +35,6 @@ public class Runner {
 	edit = profile.folowLinkEditProfile();	
 	edit.startEditPersonalData();
 	
-	
+	edit.loadPhoto();
 }
 }

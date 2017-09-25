@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class EditPage extends Page {
 	
 	@FindBy(xpath = "//b[text()='Личные данные']")
@@ -131,7 +132,29 @@ public class EditPage extends Page {
 	}	
 	
 	public void loadPhoto() {
-		loadPhoto.clear();
+		
+		driver.get("file:\\D:\\resum\\IMG_3011 - копия.JPG");
+		loadPhoto.sendKeys("file:\\D:\\resum\\IMG_3011 - копия.JPG");
+		loadPhoto.click();
+			
+		
+		
+		/*
+		// Открыть страницу (в данном случае файл на локальной машине)
+    	driver.get("file://C:/WORK/test.html");
+
+    	// Найти на странице элемент для заливки файла
+    	WebElement fileInput = driver.findElement(By.id("file"));
+
+    	// Указать элементу путь до файла (на диске)
+    	fileInput.sendKeys("file://C:/WORK/lenna.png");
+
+    	// Найти на странице кнопку отправки формы и нажать её
+    	driver.findElement(By.id("submit")).click();
+		*/
+		
+		
+		
 	}
 	
 		
