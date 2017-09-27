@@ -1,9 +1,10 @@
 package by.htp.pages;
 
+
+import java.io.File;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,7 +64,7 @@ public class EditPage extends Page {
 	WebElement savePrivacy;
 	
 	@FindBy(xpath = "//input[@name='personalForm.avatar']")
-	WebElement loadPhoto;
+	WebElement inputTypeFile;
 	
 	
 	public EditPage (WebDriver driver) {
@@ -130,32 +131,38 @@ public class EditPage extends Page {
 		savePrivacy.click();
 		return new ProfilePage(driver);
 	}	
+	/*
+	public static void setClipboardData(String string) {
+		StringSelection stringSelection = new StringSelection(string);
+		Toolkit.getDefaultToolkit().getSystemClipboard()
+				.setContents(stringSelection, null);
+	}
+	*/
 	
+	// public static final String FILE = System.getProperty("user.dir") + "\\src\\resources\\picture.jpg";
+
 	public void loadPhoto() {
 		
-		driver.get("file:\\D:\\resum\\IMG_3011 - копия.JPG");
-		loadPhoto.sendKeys("file:\\D:\\resum\\IMG_3011 - копия.JPG");
-		loadPhoto.click();
-			
+	//	File file = new File ("D:\\ECLIPSE\\QuizFull\\src\\resources\\picture.jpg");
 		
+	// File file = new File("D:\\ECLIPSE\\QuizFull\\src\\resources", "picture.jpg");
 		
-		/*
-		// Открыть страницу (в данном случае файл на локальной машине)
-    	driver.get("file://C:/WORK/test.html");
-
-    	// Найти на странице элемент для заливки файла
-    	WebElement fileInput = driver.findElement(By.id("file"));
-
-    	// Указать элементу путь до файла (на диске)
-    	fileInput.sendKeys("file://C:/WORK/lenna.png");
-
-    	// Найти на странице кнопку отправки формы и нажать её
-    	driver.findElement(By.id("submit")).click();
+	// String filePath = "D:"+File.separator+"ECLIPSE"+File.separator+"QuizFull"+File.separator
+	//                                       	+"src"+File.separator+"resources"+File.separator+"picture.jpg";
+	/*	
+		try {
+			Thread.sleep(10_000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		*/
+		 String filePath = System.getProperty("user.dir") + "\\src\\resources\\picture.jpg";
+		  inputTypeFile.sendKeys(filePath); 
 		
-		
-		
+		  
+		  //driver.findElement(By.xpath("//input[@type='file']")).sendKeys(file.getAbsolutePath());
+			
 	}
-	
 		
 }

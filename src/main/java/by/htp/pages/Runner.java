@@ -21,7 +21,7 @@ public class Runner {
 	
 	EditPage edit = profile.folowLinkEditProfile();
 	edit.startEditPersonalData();
-	
+	/*
 	profile = edit.fillFormPersonalData ("Ylia", "Antipirovich", "1993", "htp.by", "It-academy", "Studing Java");
 	edit = profile.folowLinkEditProfile();
 
@@ -32,9 +32,9 @@ public class Runner {
 	edit.startEditPrivacy();
 	profile = edit.changeRadiobuttonOnlyI();
 	
-	edit = profile.folowLinkEditProfile();	
+	edit = profile.folowLinkEditProfile();
 	edit.startEditPersonalData();
-	
+	*/
 	edit.loadPhoto();
 }
 }
