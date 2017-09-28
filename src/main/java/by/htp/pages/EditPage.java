@@ -58,7 +58,7 @@ public class EditPage extends Page {
 	@FindBy(xpath = "//input[@value='closed']")
 	WebElement onlyI;
 
-	@FindBy(xpath = "//input[@name='privacyForm.save']")
+	@FindBy(name ="privacyForm.save")
 	WebElement savePrivacy;
 
 	@FindBy(xpath = "//input[@name='personalForm.avatar']")
@@ -72,26 +72,35 @@ public class EditPage extends Page {
 		personalData.click();
 	}
 
-	
 	public ProfilePage fillFormPersonalData(String name, String surname, String birthYear, String site, String company,
-			String aboutYours) {
+			String country, String aboutYours) {
 
 		new WebDriverWait(driver, 3).until(ExpectedConditions.visibilityOf(formName));
 
+		formName.clear();
 		formName.sendKeys(name);
+
+		formSurName.clear();
 		formSurName.sendKeys(surname);
+
+		formbirthYear.clear();
 		formbirthYear.sendKeys(birthYear);
+
+		formSite.clear();
 		formSite.sendKeys(site);
+
+		formCompany.clear();
 		formCompany.sendKeys(company);
-		findOption(select, "Беларусь");
+
+		findOption(select, country);
 		findOption(selectTimeZone, "Белоруссия/Минск(GMT+3)");
+
+		aboutYourSelf.clear();
 		aboutYourSelf.sendKeys(aboutYours);
 		save.click();
 		return new ProfilePage(driver);
 	}
 
-	
-	
 	private void findOption(WebElement element, String optionStr) {
 		List<WebElement> options = element.findElements(By.tagName("option"));
 		for (WebElement option : options) {
@@ -124,7 +133,7 @@ public class EditPage extends Page {
 
 	public ProfilePage changeRadiobuttonOnlyI() {
 		new WebDriverWait(driver, 3).until(ExpectedConditions.visibilityOf(onlyI));
-		onlyI.click();
+		onlyI.click();		
 		savePrivacy.click();
 		return new ProfilePage(driver);
 	}

@@ -28,7 +28,7 @@ public class Runner {
 
 		EditPage edit = profile.folowLinkEditProfile();
 		edit.startEditPersonalData();
-		profile = edit.fillFormPersonalData("Ylia", "Antipirovich", "1993", "htp.by", "It-academy", "Studing Java");
+		profile = edit.fillFormPersonalData("Ylia", "Antipirovich", "1993", "htp.by", "It-academy", "Беларусь", "Studing Java");
 		edit = profile.folowLinkEditProfile();
 
 		edit.startEditSettingNotifications();

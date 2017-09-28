@@ -1,0 +1,9 @@
+<suite name="TESTSuit">
+  <test name="Auto">
+   <classes>
+      <class name="by.htp.pagestest.EditPagePersonalDataTest"/>
+      <class name="by.htp.pagestest.EditPageNotificationTest"/>  
+      <class name="by.htp.pagestest.EditPagePrivacyTest"/>
+   </classes>  
+  </test>
+</suite>
