@@ -51,6 +51,7 @@ public class EditPagePersonalDataTest {
 	public void beforeClassInit() {
 		System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");
 		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		PageFactory.initElements(driver, this);
 
 		StartPage mainPage = new StartPage(driver);

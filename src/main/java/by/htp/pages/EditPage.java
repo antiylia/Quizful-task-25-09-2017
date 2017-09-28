@@ -1,6 +1,7 @@
 package by.htp.pages;
 
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -131,7 +132,7 @@ public class EditPage extends Page {
 		privacy.click();
 	}
 
-	public ProfilePage changeRadiobuttonOnlyI() {
+	public ProfilePage changeRadiobuttonOnlyI() {		
 		new WebDriverWait(driver, 3).until(ExpectedConditions.visibilityOf(onlyI));
 		onlyI.click();		
 		savePrivacy.click();
