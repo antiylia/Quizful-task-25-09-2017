@@ -1,4 +1,4 @@
-package QuizFull.QuizFull;
+package by.htp.pagestest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
